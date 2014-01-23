@@ -7,6 +7,7 @@
 //
 
 #import "PopularShotsViewController.h"
+#import "ShotCell.h"
 
 @interface PopularShotsViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -80,7 +81,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *shot = self.shots[indexPath.row];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Shot"];
+    ShotCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Shot"];
     
     /* SLOW WAY
     NSURL *imageURL = [NSURL URLWithString:shot[@"image_url"]];
@@ -92,18 +93,33 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:imageUrl
                                              cachePolicy:0
                                          timeoutInterval:8.0];
-    [request HTTPMethod];
     [NSURLConnection sendAsynchronousRequest:request
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                               //--- OPTION 1 ---
+                               //below code is no longer needed because you created a class for the prototype cell that containes an image view
+                               //UIImageView *imageView = (UIImageView *)[cell viewWithTag:100];
                                
                                
+                               cell.shotImageView.image = [UIImage imageWithData:data];
+    }];
+    
+    
+                               /*--- OPTION 2----
                                //dispatch methods are used for low level threading and talks to GCD
                                //important part of this method that makes images/data to rum smoothly
+    
+    [NSURLConnection sendAsynchronousRequest:request
+                                queue:[NSOperationQueue mainQueue]
+                                completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
                                dispatch_async(dispatch_get_main_queue(), ^{
-                                   cell.imageView.image = [UIImage imageWithData:data];
+                                   //this method brings you back to the main thread. You can only make UI changes from the main thread
+                                   UIImageView *imageView = (UIImageView *)[cell viewWithTag:100];
+                                   imageView.image = [UIImage imageWithData:data];
+                            
                                });
                            }];
+                        */
     
     return cell;
     

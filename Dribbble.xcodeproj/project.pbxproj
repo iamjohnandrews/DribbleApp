@@ -21,6 +21,7 @@
 		B086B5D618915E6A00C53DD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B086B5B818915E6A00C53DD0 /* UIKit.framework */; };
 		B086B5DE18915E6A00C53DD0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B086B5DC18915E6A00C53DD0 /* InfoPlist.strings */; };
 		B086B5E018915E6A00C53DD0 /* DribbbleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B086B5DF18915E6A00C53DD0 /* DribbbleTests.m */; };
+		B086B5EB18917A0700C53DD0 /* ShotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B086B5EA18917A0700C53DD0 /* ShotCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		B086B5DB18915E6A00C53DD0 /* DribbbleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DribbbleTests-Info.plist"; sourceTree = "<group>"; };
 		B086B5DD18915E6A00C53DD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B086B5DF18915E6A00C53DD0 /* DribbbleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DribbbleTests.m; sourceTree = "<group>"; };
+		B086B5E918917A0700C53DD0 /* ShotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShotCell.h; sourceTree = "<group>"; };
+		B086B5EA18917A0700C53DD0 /* ShotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShotCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 				B086B5C618915E6A00C53DD0 /* Main.storyboard */,
 				B086B5C918915E6A00C53DD0 /* PopularShotsViewController.h */,
 				B086B5CA18915E6A00C53DD0 /* PopularShotsViewController.m */,
+				B086B5E918917A0700C53DD0 /* ShotCell.h */,
+				B086B5EA18917A0700C53DD0 /* ShotCell.m */,
 				B086B5CC18915E6A00C53DD0 /* Images.xcassets */,
 				B086B5BB18915E6A00C53DD0 /* Supporting Files */,
 			);
@@ -252,6 +257,7 @@
 				B086B5CB18915E6A00C53DD0 /* PopularShotsViewController.m in Sources */,
 				B086B5C518915E6A00C53DD0 /* AppDelegate.m in Sources */,
 				B086B5C118915E6A00C53DD0 /* main.m in Sources */,
+				B086B5EB18917A0700C53DD0 /* ShotCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
