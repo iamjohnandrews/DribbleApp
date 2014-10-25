@@ -62,8 +62,6 @@
 //                               for (NSDictionary *shotURL in shots) {
 //                                   //NSLog(@"%@", shotURL[@"image_url"]);
 //                               }*/
-
-                               //operation:dispatch to background if needed...
                                
                            }];
 
